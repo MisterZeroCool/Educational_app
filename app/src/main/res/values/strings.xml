@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Java and Kotlin educational app</string>
+    <string name="image">image</string>
+    <string name="easy">Easy</string>
+    <string name="medium">MEDIUM</string>
+    <string name="hard">Hard</string>
+    <string name="train_your_brain">Train your Brain</string>
+</resources>
