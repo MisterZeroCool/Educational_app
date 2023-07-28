@@ -29,8 +29,29 @@ object Hard{
         val operator3 = arrayOf("+", "-", "x", "/").random()
 
         val problem = when(bracketPosition){
-            1 -> "(($num1 $operator1 $num2) $operator2 $num3) $operator3 $num4 "
-            else -> "($num1 $operator1 9$num2 $operator2 $num3) $operator3 $num4) "
+            1 -> "(($num1 $operator1 $num2) $operator2 $num3) $operator3 $num4"
+            2 -> "(($num1 $operator1 ($num2 $operator2 $num3)) $operator3 $num4"
+            else -> "($num1 $operator1 $num2) $operator2 ($num3 $operator3 $num4)"
         }
+        val halfAns1 = when(bracketPosition){
+            1 -> makeOperation(num1, num2, operator1)
+            2 -> makeOperation(num2, num3, operator2)
+            else -> makeOperation(num1, num2, operator1)
+        }
+
+        val halfAns2 = when(bracketPosition){
+            1 -> makeOperation(halfAns1, num3, operator2)
+            2 -> makeOperation(num1, halfAns1, operator1)
+            else -> makeOperation(num3, num4, operator3)
+        }
+
+        var answer = when(bracketPosition){
+            3 -> makeOperation(halfAns1, halfAns2, operator1)
+            else -> makeOperation(halfAns2, num4, operator3)
+        }
+
+        if (halfAns2 == 77777777)
+            answer = 77777777
+        return Pair(problem, answer)
     }
 }
