@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/buttonEasy"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="210dp"
         android:layout_marginStart="10dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonMedium"
+        android:id="@+id/btnEasy"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
@@ -32,10 +32,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEasy" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonHard"
+        android:id="@+id/btnMedium"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -47,9 +47,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonMedium" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEasy" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnHard"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_bg"
@@ -61,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMedium" />
 
     <TextView
         android:layout_width="wrap_content"
