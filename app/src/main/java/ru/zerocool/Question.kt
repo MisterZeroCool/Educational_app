@@ -1,5 +1,7 @@
 package ru.zerocool
 
+import java.io.Serializable
+
 data class Question(
     val problem: String,
     val answer: String,
@@ -8,4 +10,4 @@ data class Question(
     val operator3: String,
     val operator4: String,
     var selectedOption: String
-)
+):Serializable
