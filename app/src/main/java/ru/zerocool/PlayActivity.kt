@@ -1,5 +1,6 @@
 package ru.zerocool
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,7 @@ class PlayActivity : AppCompatActivity() {
         updateOption()
         updateHorizontalProgressBar()
         startTimer()
+
 
         binding?.btnOption1?.setOnClickListener {
             onSelectOption(binding?.btnOption1?.text.toString())
@@ -109,6 +111,10 @@ class PlayActivity : AppCompatActivity() {
     }
 
     private fun endGame() {
+        val intent = Intent(this, FinishActivity::class.java)
+        intent.putExtra("score", score)
+        intent.putExtra("dataSet", questionDataList)
+        startActivity(intent)
         finish()
         timer?.cancel()
         timer = null
